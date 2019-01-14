@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to navigation links/menus.
+// -----------------------------------------------------------------------------
+.nav-main {
+  float: right;
+  text-transform: uppercase;
+  font-family: $header-font-stack;
+}
+
+.nav-main__link {
+  margin-left: 1rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+
+  @at-root #{&}:hover {
+    border-bottom: 3px solid $g300;
+    text-decoration: none;
+  }
+
+  @at-root #{&}.active {
+    border-bottom: 3px solid $g300;
+    text-decoration: none;
+  }
+
+  @include mediaquery("min-width", map-get($breakpoints, medium)) {
+    margin-left: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+.lead-in {
+  margin: 0.5rem;
+
+  @include mediaquery("min-width", map-get($breakpoints, medium)) {
+      margin: 2rem;
+  }
+}
+
+.lead-out {
+  margin-left: 1rem;
+}
+
+.paginator {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 0.75rem;
+
+  @include mediaquery("min-width", map-get($breakpoints, medium)) {
+    font-size: 1rem;
+  }
+}
+

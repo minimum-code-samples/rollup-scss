@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+/// Native `url(..)` function wrapper
+/// @param {String} $base - base URL for the asset
+/// @param {String} $type - asset type folder (e.g. `fonts/`)
+/// @param {String} $path - asset path
+/// @return {Url}
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+/// Returns URL to an image based on its path
+/// @param {String} $path - image path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $base-url
+@function image($path, $base: $base-url) {
+  @return asset($base, 'images/', $path);
+}
+
+/// Returns URL to a font based on its path
+/// @param {String} $path - font path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $base-url
+@function font($path, $base: $base-url) {
+  @return asset($base, 'fonts/', $path);
+}
+
+/// Converts a colour code in HSB to HSLA.
+/// @param {Number} $h-hsb - the hue value of the HSB colour scheme
+/// @param {Number} $s-hsb - the saturation value of the HSB colour scheme
+/// @param {Number} $b-hsb - the brightness value of the HSB colour scheme
+/// @param {Number} $a [1] - the opacity value of the colour
+/// @return {Color}
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+    @if $b-hsb == 0 {
+      @return hsla(0, 0, 0, $a);
+    } @else {
+      $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+      $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+      @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+    }
+}

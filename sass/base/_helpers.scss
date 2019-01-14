@@ -1,0 +1,130 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.clearfixl::after {
+  clear: left;
+  content: '';
+  display: table;
+}
+
+.clearfixr::after {
+  clear: right;
+  content: '';
+  display: table;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/**
+ * Align text within the container.
+ */
+.txtc { text-align: center; }
+.txtj { text-align: justify; }
+.txtl { text-align: left; }
+.txtr { text-align: right; }
+
+/**
+ * Float elements.
+ */
+.floatl { float: left; }
+.floatr { float: right; }
+
+/**
+ * Makes the element 100% wide.
+ */
+.full { width: 100% }
+a.full {
+  display: block;
+}
+
+/**
+ * Text decoration helpers.
+ */
+.strikethrough { text-decoration: line-through; }
+.caselower { text-transform: lowercase; }
+.caseupper { text-transform: uppercase; }
+
+/**
+ * Generic element modifiers.
+ */
+.clickable { cursor: pointer; }
+
+.hide { display: none; }
+.hideforce { display: none !important }
+
+/**
+ * Makes an element circular.
+ */
+.circular {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/**
+ * Centers the blocks contents horizontally and vertically.
+ */
+.centerer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * Prevents text from flowing under a floated image.
+ */
+.nobleed { overflow: hidden }
+
+/**
+ * Forces text to break within the container.
+ */
+.break {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/**
+ * Prevents the page from scrolling either by mouse wheel, Page Up/Down or space keys.
+ * This is to be used on the <html> tag.
+ */
+.pagenoscroll {
+  height: 100%;
+  overflow: hidden;
+}
+

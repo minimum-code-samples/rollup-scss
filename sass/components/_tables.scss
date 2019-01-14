@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// This file contains styles related to sections, tables, lists, etc.
+// -----------------------------------------------------------------------------
+
+/**
+ * Makes a table mobile-responsive.
+ * 1. To use this properly, a <div> element inside each of the cell should be
+ *    added with the class "mobile-th". This is used to replace the headers of
+ *    the table in the mobile view. This class should be styled for the project.
+ * 2. Additionally, the vertical alignment for the cells are change to top.
+ * 3. All components of the table are changed to behave like a <div> except
+ *    for the header row.
+ * 4. All the borders of <td> are zeroed. Only <tr> have top border of 1 pixel.
+ */
+table.mobile td,
+table.mobile th {
+  vertical-align: top; /* [2] */
+}
+
+table.mobile .mobile-th {
+  display: none; /* [1] */
+}
+
+@include mediaquery("max-width", $breakpoint-table) {
+    table.mobile .mobile-th {
+      display: block; /* [1] */
+    }
+
+    table.mobile,
+    table.mobile thead,
+    table.mobile tbody,
+    table.mobile th,
+    table.mobile tr,
+    table.mobile td {
+      display: block; /* [3] */
+    }
+
+    table.mobile thead tr {
+      display: none; /* [3] */
+    }
+
+    table.mobile {
+      border-top-width: 0;
+    }
+
+    table.mobile tbody tr { /* [4] */
+      border-top-width: 1px;
+      border-top-style: solid;
+    }
+
+    table.mobile tbody tr td { /* [4] */
+      border-width: 0;
+    }
+}

@@ -1,0 +1,110 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// The colour palette for the primary colour.
+$p900: #001A25 !default;
+$p800: #2B3F4B !default;
+$p700: #4C5E6C !default;
+$p600: #6F7E8B !default;
+$p500: #8B99A6 !default;
+$p400: #A9B3BE !default;
+$p300: #BBC5D2 !default;
+$p200: #D6DCE4 !default;
+$p100: #F1F2F3 !default;
+
+/// The colour palette for accent colour 1.
+$a900: #001A25 !default;
+$a800: #14374B !default;
+$a700: #26516C !default;
+$a600: #496C8B !default;
+$a500: #6686A6 !default;
+$a400: #839FBE !default;
+$a300: #A1B7D2 !default;
+$a200: #C0D0E4 !default;
+$a100: #DFE7F3 !default;
+
+/// The palette for the grey shades.
+$g900: #222425 !default;
+$g800: #46494B !default;
+$g700: #65696C !default;
+$g600: #83878B !default;
+$g500: #9EA2A6 !default;
+$g400: #B6BABE !default;
+$g300: #CBCFD2 !default;
+$g200: #DFE2E4 !default;
+$g100: #F0F2F3 !default;
+
+/// Primary background colour of the page.
+/// @type Color
+$color-background-pri: $g100 !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: $p900 !default;
+
+/// Line height - defines the line height of paragraphs.
+/// @type Length
+$line-height: 1.5em !default;
+
+
+
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Rubik', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Oxygen Mono', monospace !default;
+
+/// Header font family
+/// @type List
+$header-font-stack: 'Abril Fatface', cursive !default;
+
+
+
+
+
+/// Copy text color
+/// @type Color
+$text-color: rgba(0, 0, 0, 0.75) !default;
+
+
+
+
+
+/// Container's maximum width
+/// Set as 1190 to accommodate for 1280 pixels less the scrollbars.
+/// 1190 = (12 * 90) + (11 * 10)
+/// @type Length
+$max-width: 1190px !default;
+
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 769px,
+  'large': 1024px,
+  'huge': 1280px,
+) !default;
+
+/// The width at which mobile responsive table (table.mobile) will change to a
+/// column view.
+$breakpoint-table: 768px !default;
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

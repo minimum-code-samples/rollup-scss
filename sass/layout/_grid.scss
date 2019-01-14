@@ -1,0 +1,17 @@
+// ----------------------------------------------------------------------------
+// This file contains all styles related to the layout of the pages.
+// ----------------------------------------------------------------------------
+
+/**
+ * Main content container.
+ * 1. Make the container full width with a maximum value.
+ * 2. Center it in the viewport
+ * 3. Don't assign padding as small screens may need to stretch the entire screen.
+ * 4. No clearfixes are added for this class because the relevant classes can be applied to the same element.
+ */
+.container {
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  max-width: $max-width; /* 1 */
+  width: 100%; /* 1 */
+}

@@ -1,0 +1,222 @@
+//Based on normalize.css v5.0.0 | github.com/necolas/normalize.css
+//With materials from http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. The text-size-adjust declarations prevent certain mobile browsers from
+ *    automatically zooming fonts. Importantly this ensures iOS Safari matches
+ *    the page width to wider landscape viewports instead of zooming everything.
+ *    Unlike none, a value of 100% allows users to still pinch-zoom. These rules
+ *    appear in Normalize.css, which is in turn used in the HTML5 Boilerplate
+ *    and Bootstrap.
+ */
+html {
+  -ms-text-size-adjust: 100%; /* [1] */
+  -webkit-text-size-adjust: 100%; /* [1] */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * 1. Remove page margins.
+ * 2. The default font size can vary between browsers; normalize this to a
+ *    legible base size suited to your chosen main font, which should replace
+ *    sans-serif. 
+ * 3. A line-height of 1 resets inconsistent browser interpretations of the
+ *    default normal to a more robust base value that will not cause undesired
+ *    spacing.
+ * 4. The font-smoothing declarations are a good idea for a few reasons:
+ *    - Fonts on OS X will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ *    - Although grayscale is inferior to sub-pixel anti-aliasing, most fonts
+ *    were designed for the “thinner” anti-aliasing and look better that way.
+ *    - Setting this smoothing beforehand prevents an ugly flickering of font
+ *    “thickness” when animations start and stop. Browsers use this simpler
+ *    font smoothing to save on resources when animating or transitioning
+ *    elements.
+ * 5. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+body {
+  margin: 0; /* [1] */
+  font: 16px/1 sans-serif; /* [2] [3] */
+  -moz-osx-font-smoothing: grayscale; /* [4] */
+  -webkit-font-smoothing: antialiased; /* [4] */
+  -ms-text-size-adjust: 100%; /* [5] */
+  -webkit-text-size-adjust: 100%; /* [5] */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Stripping the margin and padding from these core elements brings them to
+ *    the same predictable blank slate as div, section and article. The vast
+ *    majority of the time you style these elements you want either a 0 value
+ *    or something very specific. You will override 0 a lot less than an
+ *    arbitrary value such as 1em.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+ol,
+ul {
+    margin: 0; /* [1] */
+    padding: 0; /* [1] */
+    //TODO check this style list-style-position: inside;
+}
+
+/**
+ * 1. This fixes the main tag being unsupported and horribly breaking the layout in even recent versions of IE.
+ * 2. It also gets rid of the little bullets and numbers from list items,
+ *    saving you having to strip them off repeatedly every time you make a
+ *    menu or any other component that is semantically a list. When you
+ *    actually need bullets or numbering pseudo-elements provide more
+ *    customization options than the standard list-style approach anyway.
+ */
+main,
+li {
+  display: block;
+}
+
+/**
+ * It makes much more sense for headings to inherit the same size as the
+ * surrounding text by default and not some arbitrary larger size. You will
+ * have greater consistency and override less.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+/**
+ * This corrects some browsers defaulting to bolder.
+ */
+strong {
+  font-weight: bold;
+}
+
+/**
+ * 1. Hyperlinks are no longer just blue.
+ * 2. Fixes buttons not inheriting text color in most browsers.
+ */
+a,
+button {
+    color: inherit; /* [1] [2] */
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+}
+
+/**
+ * Along with colour inheritence, reduces complexity to links when applied to
+ * different elements.
+ */
+a {
+    text-decoration: none;
+}
+
+/**
+ * 1. overflow: visible makes IE behave the same as other browsers.
+ * 2. The border, font, letter-spacing and background rules conveniently reset
+ *    the native appearance in all browsers.
+ * 3. The -webkit-font-smoothing rule fixes buggy inheritance.
+ * 4. For consistency with links it is a good idea to give all buttons a
+ *    pointer cursor.
+ */
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+/**
+ * This undoes a pseudo-element Firefox adds inside buttons that causes them to display larger than expected.
+ */
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * Removes the ugly bar.
+ */
+hr {
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/* Contain overflow in all browsers. */
+pre {
+  overflow: auto;
+}
+
+/* Element spacings
+   ========================================================================== */
+/**
+ * Remove the margin and padding added to the input fields.
+ * 1. Also remove the focus on the fields.
+ */
+input {
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: 0; /* [1] */
+  }
+}
+
+/**
+ * 1. Scale the image proportionally to its maximum width where maximum
+ *    width is either the image's actual width or the width of its
+ *    parent container.
+ * 2. border: 0 fixes images within links gaining a border in IE 8, 9 and 10.
+ */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}

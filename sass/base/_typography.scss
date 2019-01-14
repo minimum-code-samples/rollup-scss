@@ -1,0 +1,54 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font-size: 16px;
+  font-family: $text-font-stack;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font-stack;
+}
+
+a {
+  text-decoration: underline;
+
+  @include on-event {
+    text-decoration: none;
+  }
+}
+
+.mono,
+code {
+  font-family: $code-font-stack;
+}
+
+p {
+  margin-bottom: 0.75rem;
+  line-height: $line-height;
+}
+
+ul.normal li,
+ol.normal li {
+  display: list-item;
+}
+
+ul.typical li,
+ol.typical li {
+  display: list-item;
+  list-style-position: inside;
+}
+
+ul.indented li,
+ol.indented li {
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+  display: list-item;
+}
+

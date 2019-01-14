@@ -1,0 +1,256 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.break-earlier {
+  margin-bottom: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid $g300;
+  text-align: center;
+}
+
+/*-----------------------------------------------------------------------------
+Article summary
+-----------------------------------------------------------------------------*/
+.artsum {
+  padding-bottom: 3rem;
+
+  .material-icons {
+    vertical-align: middle;
+  }
+
+  .button {
+    /* prevents the button from breaking between the words when tags overlap */
+    white-space: nowrap;
+  }
+
+  pre {
+    padding: 0.5em 0;
+    white-space: inherit; /* prevents code blocks from occupying excessive width */
+  }
+
+  object {
+    width: 100%;
+    height: 20rem;
+  }
+
+  figure {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+
+    /**
+     * Must be block otherwise there will be a gap at the bottom.
+     */
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    figcaption {
+      /*position: absolute;*/
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 0.875rem;
+      height: 2.5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-overflow: ellipsis;
+      color: $p800;
+      background-color: #fff;
+      opacity: 0.5;
+      filter: alpha(opacity=5); /* For IE8 and earlier */
+    }
+  }
+}
+
+.artsum__date {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $p900;
+  text-align: right;
+  font-size: 0.875rem;
+  color: $p700;
+}
+
+.artsum__title {
+  font-family: $header-font-stack;
+  line-height: 1.5em;
+  color: $p900;
+}
+
+.artsum__content {
+  margin-top: 1rem;
+}
+
+.artsum__meta {
+  margin-top: 1.5rem;
+}
+
+.artsum__tag {
+  text-align: right;
+}
+
+.tag {
+  margin-bottom: 0.5em;
+  display: inline-block;
+  padding: 0.125rem 0.75rem 0.25rem;
+  border-radius: 1em;
+  font-size: smaller;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: $p400;
+}
+
+.tag.active {
+  background-color: $p700;
+}
+
+/*-----------------------------------------------------------------------------
+Project summary
+-----------------------------------------------------------------------------*/
+.projsum {
+  margin: 1rem 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid $p900;
+}
+
+.projsum__title {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/*-----------------------------------------------------------------------------
+Grid in home page
+-----------------------------------------------------------------------------*/
+.ghome {
+  margin: 0 0.5rem;
+  display: grid;
+  grid-row-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  justify-items: stretch;
+  align-items: start;
+}
+
+.ghome__a {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.ghome__b {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.ghome__c {
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.ghome__d {
+  grid-column-start: 1;
+  grid-row-start: 6;
+}
+
+.ghome__e {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.ghome__f {
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+@include mediaquery("min-width", map-get($breakpoints, medium)) {
+  .ghome {
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: stretch;
+    align-items: start;
+  }
+
+  .ghome__a {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+  .ghome__b {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+
+  .ghome__c {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+  }
+
+  .ghome__d {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .ghome__e {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+  }
+
+  .ghome__f {
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+}
+
+/*-----------------------------------------------------------------------------
+Taxonomy pages
+-----------------------------------------------------------------------------*/
+.taxo {
+  h2,
+  h3 {
+    margin-bottom: 1.5em;
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-family: $text-font-stack;
+    font-size: 1.5rem;
+  }
+
+  .em {
+    font-family: $header-font-stack;
+  }
+
+  .tag {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/*-----------------------------------------------------------------------------
+Grid in taxonomy pages
+-----------------------------------------------------------------------------*/
+.gtax {
+  margin: 0 0.5rem;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+
+@include mediaquery("min-width", map-get($breakpoints, medium)) {
+  .gtax {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

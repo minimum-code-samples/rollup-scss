@@ -1,0 +1,21 @@
+{
+  "name": "rollup-scss",
+  "version": "1.0.0",
+  "description": "A demonstration of generating a compiled CSS file from SCSS source using Rollup.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/rollup/bin/rollup -c scripts/rollup.config.prod.js",
+    "build:dev": "node_modules/rollup/bin/rollup -c scripts/rollup.config.dev.js -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rollup",
+    "scss"
+  ],
+  "author": "CH Chua",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^1.1.0",
+    "rollup-plugin-scss": "^0.4.0"
+  }
+}
