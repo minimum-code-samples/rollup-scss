@@ -15,7 +15,7 @@
   "author": "CH Chua",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^1.1.0",
+    "rollup": "^1.32.1",
     "rollup-plugin-scss": "^0.4.0"
   }
 }
