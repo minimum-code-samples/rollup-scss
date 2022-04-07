@@ -2,7 +2,7 @@
 
 This sample project contains the Rollup configuration script that compiles SCSS source code into a bundled CSS file.
 
-Last updated: 14 January 2019
+Last updated: 7 April 2022
 
 ## TL;DR
 
